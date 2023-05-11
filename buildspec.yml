@@ -1,25 +1,24 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
-      java: corretto11
-  pre_build:
+      java: openjdk11
     commands:
-      - echo Nothing to do in the pre_build phase...moving on...
+      - yum update
+      - sudo amazon-linux-extras install java-openjdk11
+      - yum install -y maven
   build:
     commands:
-      - echo Build started on `date`
-      - mvn test
-      - echo Test completed on `date`
-  post_build:
-    commands:
-      - mvn clean package
-      - echo Build completed on `date`
+      - mvn package
 artifacts:
-  discard-paths: yes
   files:
     - target/*.war
-    - scripts/*
-    - appspec.yml
+
+
+      #artifacts:
+      #  discard-paths: yes
+      #  files:
+      #    - target/*.war
+      #    - scripts/*
+      #    - appspec.yml
 

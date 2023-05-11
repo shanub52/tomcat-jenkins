@@ -4,7 +4,7 @@ os: linux
 # Make sure that "destination" is not same for two different Code Deploy Groups/Deployments.
 files:
   - source: /
-    destination: /opt/tomcat/
+    destination: /opt/tomcat/webapp/
 
 permissions:
   - object: /
