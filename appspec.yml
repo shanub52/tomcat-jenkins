@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /opt/myapp/
+  - source: ././gs-*.jar
+    destination: /tmp
 hooks:
   BeforeInstall:
     - location: scripts/stop_tomcat.sh
@@ -16,3 +16,8 @@ hooks:
     - location: scripts/deploy_war.sh
       timeout: 300
       runas: root
+  ValidateService:
+    - location: scripts/validate.sh
+      timeout: 20
+      runas: root
+        

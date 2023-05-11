@@ -2,7 +2,7 @@
 set -e
 
 # Define the path to the WAR file
-WAR_FILE=/opt/myapp/gs-*.war
+WAR_FILE=/tmp/gs-*.jar
 
 # Define the path to the Tomcat installation directory
 TOMCAT_DIR=/opt/tomcat
