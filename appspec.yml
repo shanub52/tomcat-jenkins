@@ -1,31 +1,18 @@
 version: 0.0
 os: linux
-
-# Make sure that "destination" is not same for two different Code Deploy Groups/Deployments.
 files:
   - source: /
-    destination: /opt/tomcat/webapp/
-
-permissions:
-  - object: /
-    pattern: "**"
-    owner: root
-    group: root
-
+    destination: /opt/myapp/
 hooks:
-#  BeforeInstall:
-#    - location: scripts/install_dependencies.sh
-#      timeout: 300
-#      runas: root
-  ApplicationStop:
-    - location: scripts/stop.sh
-      timeout: 20
+  BeforeInstall:
+    - location: scripts/stop_tomcat.sh
+      timeout: 60
+      runas: root
+  AfterInstall:
+    - location: scripts/start_tomcat.sh
+      timeout: 60
       runas: root
   ApplicationStart:
-    - location: script/start.sh
-      timeout: 20
+    - location: scripts/deploy_war.sh
+      timeout: 300
       runas: root
-#  ValidateService:
-#    - location: validate.sh
-#      timeout: 20
-#      runas: root
