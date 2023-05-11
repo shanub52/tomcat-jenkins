@@ -5,7 +5,7 @@ phases:
       java: openjdk11
     commands:
       - yum update
-      - sudo amazon-linux-extras install java-openjdk11
+        #      - sudo amazon-linux-extras install java-openjdk11
       - yum install -y maven
   build:
     commands:
