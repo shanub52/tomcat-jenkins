@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>myapp</artifactId>
-    <version>1</version>
+    <artifactId>gs-spring-boot</artifactId>
+    <version>0.1.0</version>
     <packaging>war</packaging>
     <name>Spring Boot Sample</name>
     <description>Getting started with Spring Boot via ADF</description>
