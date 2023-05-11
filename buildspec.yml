@@ -12,7 +12,7 @@ phases:
       - mvn package
 artifacts:
   files:
-    - target/gs-*.war
+    - target/gs-*.jar
 
 
       #artifacts:
